@@ -19,6 +19,12 @@ namespace LuftBorn.API.Controllers
             return Ok(_user.GetLogin(model.Email , model.Password));
         }
 
+        [HttpGet, Route("api/LuftBornUser/UsersGrid")]
+        public IActionResult UsersGrid()
+        {
+            return Ok(_user.GetUsers());
+        }
+
 
 
     }

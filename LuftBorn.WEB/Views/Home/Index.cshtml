@@ -5,9 +5,76 @@
 }
 
 
-    <div class="card border-light mb-3 mt-3">
-        <div class="card-header"><i class="fa fa-group"></i> Users</div>
-        <div class="card-body">
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+<div class="card border-light mb-3 mt-3">
+    <div class="card-header"><i class="fa fa-group"></i> Users</div>
+    <div class="card-body">
+        <button type="button" class="btn btn-sm btn-dark" data-toggle="modal"
+                data-target="#exampleModal">
+            <i class="fa fa-plus"></i> ADD
+        </button>
+
+        <table class="table table-hover mt-3">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th><span class="fa fa-cogs"></span></th>
+                </tr>
+            </thead>
+            <tbody id="tblBody">
+            </tbody>
+        </table>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+             aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">ADD NEW USER</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="row">
+                                <div class="col-6">
+                                    <label>Firstname</label>
+                                    <input type="text" class="form-control" id="fnameTxt" placeholder="Firstname" autocomplete="off" />
+                                </div>
+                                <div class="col-6">
+                                    <label>Lastname</label>
+                                    <input type="text" class="form-control" id="lnameTxt" placeholder="Lastname" autocomplete="off" />
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col-6">
+                                    <label>Email</label>
+                                    <input type="text" class="form-control" id="emailTxt" placeholder="Email" autocomplete="off" />
+                                </div>
+                                <div class="col-6">
+                                    <label>Password</label>
+                                    <input type="password" class="form-control" id="passTxt" placeholder="Password" autocomplete="off" />
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">
+                            Close
+                        </button>
+                        <button type="button" class="btn btn-primary" onclick="ADDUSER()">
+                            Save
+                            changes
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
+
+
     </div>
+</div>
