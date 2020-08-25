@@ -1,7 +1,7 @@
 ﻿body {
     padding-top: 4.2rem;
     padding-bottom: 4.2rem;
-    background: rgba(0, 0, 0, 0.76);
+    background: #772953;
 }
 
 a {
@@ -35,6 +35,8 @@ h1, h2, h3 {
 
 .mybtn {
     border-radius: 50px;
+    background-color: #772953 !important;
+    color : white;
 }
 
 .login-or {
@@ -61,21 +63,4 @@ h1, h2, h3 {
     height: 1px;
     margin-top: 0px !important;
     margin-bottom: 0px !important;
-}
-
-.google {
-    color: #666;
-    width: 100%;
-    height: 40px;
-    text-align: center;
-    outline: none;
-    border: 1px solid lightgrey;
-}
-
-form .error {
-    color: #ff0000;
-}
-
-#second {
-    display: none;
 }

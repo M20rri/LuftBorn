@@ -8,10 +8,7 @@ namespace LuftBorn.API.Service
 {
     public class UserService : IUserService
     {
-        private readonly List<User> _users;
-        public UserService()
-        {
-            _users = new List<User>
+            private static List<User> _users = new List<User>
             {
                 new User { Id = 1 , Email = "atweedy0@amazon.de" , Password = "83SzvLWrULh" , Firstname = "Cunégonde" , Lastname = "Tweedy" },
                 new User { Id = 2 , Email = "alambourn1@dot.gov" , Password = "6cNQbXINAA" , Firstname = "Laïla" , Lastname = "Lambourn"},
@@ -21,7 +18,6 @@ namespace LuftBorn.API.Service
                 new User { Id = 6 , Email = "fvollam5@tumblr.com" , Password = "5vSTw94FleK" , Firstname = "Maïlis" , Lastname = "Vollam"},
                 new User { Id = 7 , Email = "gmorgans6@time.com" , Password = "PSBbjW24" , Firstname = "Hélène" , Lastname = "Morgans"}
             };
-        }
 
         public ResponseMessage AddUser(User model)
         {
@@ -30,7 +26,9 @@ namespace LuftBorn.API.Service
             {
                 return new ResponseMessage { Code = 0, Message = $"{model.Firstname + " " + model.Lastname} Inserted Before" };
             }
+            model.Id = _users.Max(a => a.Id) + 1;
             _users.Add(model);
+
             return new ResponseMessage { Code = 1, Message = $"{model.Firstname + " " + model.Lastname} Inserted" };
         }
 
@@ -52,9 +50,7 @@ namespace LuftBorn.API.Service
             {
                 user.Firstname = model.Firstname;
                 user.Lastname = model.Lastname;
-                user.Email = model.Email;
-                user.Password = model.Password;
-
+                
                 return new ResponseMessage { Code = 1, Message = $"{user.Firstname + " " + user.Lastname} Updated" };
 
             }
